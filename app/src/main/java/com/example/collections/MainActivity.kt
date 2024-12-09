@@ -35,9 +35,31 @@ fun exampleArrays(){
 }
 
 
+fun exampleLists() {
+    val solarSystem = listOf("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
+    println(solarSystem.size)
+    println(solarSystem[2])
+    // println(solarSystem.get(3))
+    println(solarSystem.indexOf("Earth"))
+    println(solarSystem.indexOf("Pluto"))
 
+    for (planet in solarSystem) {
+        println(planet)
+    }
+    val mutableSolarSystem = mutableListOf("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
+    mutableSolarSystem.add("Pluto")
+    mutableSolarSystem.add(3, "Theia")
+    mutableSolarSystem[3] = "Future Moon"
+    println(mutableSolarSystem[3])
+    println(mutableSolarSystem[9])
+    mutableSolarSystem.removeAt(9)
+    mutableSolarSystem.remove("Future Moon")
+    println(mutableSolarSystem.contains("Pluto"))
+    println("Future Moon" in mutableSolarSystem)
+}
 
 
 fun main(){
     exampleArrays()
+    exampleLists()
 }
